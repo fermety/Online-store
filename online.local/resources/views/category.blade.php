@@ -2,8 +2,7 @@
 
 @section('title', 'Категория ' . $category->name)
 
-@section('content')
-    <div class="starter-template">
+@section('content')    
         <h1>
             {{$category->name}} {{$category->products->count()}}
         </h1>
@@ -14,6 +13,5 @@
             @foreach($category->products as $product)    
                 @include('card', compact('product')) 
             @endforeach
-        </div>
-    </div>
+        </div>    
 @endsection

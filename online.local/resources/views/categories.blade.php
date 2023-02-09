@@ -2,8 +2,7 @@
 
 @section('title', 'Все категории')
 
-@section('content')
-    <div class="starter-template">
+@section('content')    
         @foreach ($categories as $category)
             <div class="panel">
                 <a href="{{ route('category', $category->code) }}">
@@ -14,6 +13,5 @@
                     {{$category->description}}
                 </p>
             </div>
-        @endforeach       
-    </div>
+        @endforeach     
 @endsection    
