@@ -8,7 +8,7 @@
     <title>Админка: @yield('title')</title>
 
     <!-- Scripts -->
-   <script src="/js/app.js" defer></script>
+    <script src="/js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -29,9 +29,12 @@
 
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('categories.index')}}">Категории</a></li>
-                    <li><a href="http://laravel-diplom-1.rdavydov.ru/admin/products">Товары</a></li>
-                    <li><a href="http://laravel-diplom-1.rdavydov.ru/admin/orders">Заказы</a></li>
+                    @admin
+                    <li><a href="{{ route('categories.index') }}">Категории</a></li>
+                    <li><a href="{{ route('products.index') }}">Товары</a>
+                    </li>
+                    <li><a href="{{ route('home') }}">Заказы</a></li>
+                    @endadmin
                 </ul>
 
                 @guest
@@ -56,8 +59,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout')}}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     Выйти
                                 </a>
 
