@@ -8,8 +8,5 @@
     <p>Цена: <b>{{ $product->price }} руб.</b></p>
     <img src="{{ Storage::url($product->image) }}">
     <p>{{ $product->description }}</p>
-        <form action="/basket/add/1" method="POST">
-            <button type="submit" class="btn btn-success" role="button">Добавить в корзину</button>
-            <input type="hidden" name="_token" value="HrMP7hvaNwAwzn0JTbA78ENpFf47mN0qVsWL7rgD">
-        </form>    
+    <a class="btn btn-success" href="{{ route('basket-add', $product) }}">Добавить в корзину</a>
 @endsection
