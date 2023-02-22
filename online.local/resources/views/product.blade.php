@@ -8,5 +8,8 @@
     <p>Цена: <b>{{ $product->price }} руб.</b></p>
     <img src="{{ Storage::url($product->image) }}">
     <p>{{ $product->description }}</p>
-    <a class="btn btn-success" href="{{ route('basket-add', $product) }}">Добавить в корзину</a>
+    <form action="{{ route('basket-add', $product) }}" method="POST">
+        <button type="submit" class="btn btn-success" role="button">Добавить в корзину</button>
+        @csrf
+    </form>
 @endsection
